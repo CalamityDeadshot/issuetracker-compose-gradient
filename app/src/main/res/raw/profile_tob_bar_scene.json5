@@ -1,0 +1,85 @@
+{
+  ConstraintSets: {
+    start: {
+      avatar: {
+        width: 45,
+        height: 45,
+        start: ['parent', 'start', 16],
+        top: ['parent', 'top', 16]
+      },
+      divider: {
+        top: ['avatar', 'bottom', 9],
+      },
+      name: {
+        top: ['avatar', 'top'],
+        bottom: ['avatar', 'bottom'],
+        start: ['avatar', 'end', 16]
+      },
+      content: {
+        width: 'parent',
+        height: 'spread',
+        top: ['divider', 'bottom'],
+        start: ['parent', 'start'],
+        end: ['parent', 'end'],
+        bottom: ['parent', 'bottom'],
+      },
+      actions: {
+        top: ['parent', 'top'],
+        end: ['parent', 'end', 8]
+      },
+      fab: {
+        top: ['divider', 'top'],
+        bottom: ['divider', 'bottom'],
+        end: ['parent', 'end', 15],
+      }
+    },
+    end: {
+      avatar: {
+        width: 'parent',
+        height: '1:1',
+        start: ['parent', 'start'],
+        top: ['parent', 'top'],
+      },
+      divider: {
+        top: ['avatar', 'bottom'],
+      },
+      name: {
+        bottom: ['avatar', 'bottom', 24],
+        start: ['parent', 'start', 24]
+      },
+      content: {
+        width: 'parent',
+        height: 'spread',
+        top: ['divider', 'bottom'],
+        start: ['parent', 'start'],
+        end: ['parent', 'end'],
+        bottom: ['parent', 'bottom'],
+      },
+      actions: {
+        top: ['parent', 'top'],
+        end: ['parent', 'end', 8],
+      },
+      fab: {
+        top: ['divider', 'top'],
+        bottom: ['divider', 'bottom'],
+        end: ['parent', 'end', 15],
+      }
+    }
+  },
+  Transitions: {
+    default: {
+      from: 'start',
+      to: 'end',
+      pathMotionArc: 'startVertical',
+      KeyFrames: {
+        KeyAttributes: [
+          {
+            target: ['name'],
+            frames: [0, 50, 100],
+            translationX: [0, 100, 0],
+          }
+        ]
+      }
+    }
+  }
+}
